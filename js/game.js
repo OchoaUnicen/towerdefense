@@ -161,7 +161,7 @@ function tiempo() {
         context.drawImage(imagen_start, 10, 10, 70, 30);
     }
     
-    player1_interfaz.mostrar(context);
+   
     if (warrior1.getEstado() == "moviendose") {
 
         warrior1.avanzar();
@@ -196,7 +196,7 @@ function tiempo() {
   
   
 
-
+    player1_interfaz.mostrar(context);
     
 
 }
