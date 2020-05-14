@@ -49,7 +49,7 @@ function checkearTorre(evt) {
     if (mousePos.x >= player1_interfaz.getTorreRapidaX() && mousePos.x <= player1_interfaz.getTorreRapidaX() + 126 ) {
        
         player1_interfaz.setEstado("torre_rapida", "selected");
-        console.log("mousedown");
+        // console.log("mousedown");
         
 
     }
@@ -69,7 +69,7 @@ canvas.addEventListener('click', function (evt) {
 
     
     var mousePos = getMousePos(canvas, evt);
-    console.log(mousePos.x);
+    // console.log(mousePos.x);
 
 
 if (mousePos.x <= 10 + 70 && mousePos.x >= 10 && mousePos.y <= 10 + 30 && mousePos.y >= 10) {
