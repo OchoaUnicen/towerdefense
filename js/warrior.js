@@ -1,3 +1,4 @@
+
 class Warrior {
 
     constructor() {
@@ -18,6 +19,16 @@ class Warrior {
         this.estado = estado;
     }
 
+
+    spawnear() {
+
+
+       
+        this.x = -350 + Math.floor((5 - (-350)) * Math.random());
+        this.y = 86 + Math.floor((89 - 86) * Math.random());
+
+    }
+
     getEstado () {
 
         return this.estado;
@@ -30,6 +41,12 @@ class Warrior {
 
 
     animar() {
+        // document.addEventListener('DOMContentLoaded', function () { 
+
+
+       
+
+
 
         const velocidadAnimacion = 15;
         if(this.estado_animacion == "decreciente"){
@@ -105,6 +122,7 @@ class Warrior {
         }
     
         
+    // });
 
         if(this.cd_animacion_caminar <= 25 ) {
 
@@ -122,8 +140,10 @@ class Warrior {
 
     avanzar() {
         
+        //console.log(this.x, this.y, this.direccion);
         //  const moveSpeed = 0.189;
          const moveSpeed = 0.75;
+         //const moveSpeed = 0.80;
         //const moveSpeed = 2;
 
                 if (this.x < 196) {
@@ -147,7 +167,7 @@ class Warrior {
                     this.x += moveSpeed/2;
                     this.y += moveSpeed/2;
                 }
-                 if(this.x >= 637  && this.y >=258 && this.y < 269 ) {
+                 if(this.x >= 636  && this.y >=258 && this.y < 269 ) {
                     // && this.x >=600
                     if (this.direccion == "derecha") {
                         this.direccion = "izquierda";
@@ -159,12 +179,12 @@ class Warrior {
                     this.y +=moveSpeed/2;
                 }
 
-                if (this.x >=617 && this.y >= 373 && this.x <= 635) {
+                if (this.x >=617 && this.y >= 366 && this.x <= 635) {
 
                     this.direccion = "derecha";
                 }
 
-                if (this.x >=617 && this.y >= 373  && this.y <=394 && this.direccion == "derecha") {
+                if (this.x >=617 && this.y >= 366  && this.y <=394 && this.direccion == "derecha") {
 
                     this.x +=moveSpeed/2;
                     this.y +=moveSpeed/2;
@@ -177,8 +197,7 @@ class Warrior {
 
                 if (this.x >= 1000) {
 
-                    this.x =0;
-                    this.y = 87;
+                   this.spawnear();
 
                 }
   

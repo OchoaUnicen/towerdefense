@@ -17,6 +17,43 @@ class Builder {
         this.torre_rapida_estado = "unselected";
         this.torre_lenta_estado = "unselected";
         this.torre_relentizadora_estado = "unselected";
+        this.mostrar_construcciones_posibles = false;
+    }
+
+
+    serMostrarConstruccionesPosibles(estado){
+
+        this.mostrar_construcciones_posibles = estado;
+
+    }
+
+    marcarPosiblesConstrucciones (torreSeleccionada) {
+
+        if (torreSeleccionada == "torre_rapida" && this.torre_rapida_estado == "selected") {
+    
+                this.mostrar_construcciones_posibles = true;
+    
+                
+           // this.dibujarPosiblesConstrucciones(this.torre_rapida_x, this.torre_rapida_y, context);
+
+        }
+    
+    
+    }
+
+    getMostrarConstruccionesPosibles() {
+
+        return this.mostrar_construcciones_posibles;
+    }
+
+
+    //if this.mostrar_construcciones_posibles == true;
+    dibujarPosiblesConstrucciones(torreSeleccionada_x, torreSeleccionada_y, context) {
+
+
+        context.fillRect(torreSeleccionada_x, torreSeleccionada_y, 100, 100);
+
+
     }
 
     setPosicionTorre(torre, torre_x, torre_y){
