@@ -1,5 +1,5 @@
 let mapa_1 = new Image();
-mapa_1.src = "./img/mapas/grass_template_tower.jpg"
+mapa_1.src = "./img/mapas/grass_template_tower_2.png"
 
 
 

@@ -12,8 +12,12 @@ class Builder {
         this.torre_rapida_y = 355;
         this.torre_lenta = new Image();
         this.torre_lenta.src = "./img/torres/torre_lenta.png";
+        this.torre_lenta_x = this.x + 130;
+        this.torre_lenta_y = this.y + 5;
         this.torre_relentizadora = new Image();
         this.torre_relentizadora.src = "./img/torres/torre_relentizadora.png";
+        this.torre_relentizadora_x = this.x + 260;
+        this.torre_relentizadora_y = this.y+5;
         this.torre_rapida_estado = "unselected";
         this.torre_lenta_estado = "unselected";
         this.torre_relentizadora_estado = "unselected";
@@ -63,12 +67,15 @@ class Builder {
                 this.torre_rapida_x = torre_x;
                 this.torre_rapida_y = torre_y;
                 break;
-                // case "torre_lenta":
-                // this.torre_lenta_estado = estado;
-                // break;
-                // case "torre_relentizadora":
-                // this.torre_relentizadora_estado = estado;
-                // break;
+            case "torre_lenta":
+            this.torre_lenta_x = torre_x;
+            this.torre_lenta_y = torre_y;
+            break;
+            case "torre_relentizadora":
+            this.torre_relentizadora_x = torre_x;
+            this.torre_relentizadora_y = torre_y;
+            break;
+              
         }
         
 
@@ -118,13 +125,35 @@ class Builder {
         return this.y+5
     }
 
+    getTorreLentaX(){
+
+        return this.x + 130;
+    }
+
+    getTorreLentaY(){
+
+        return this.y+5
+    }
+    getTorreRelentizadoraX(){
+
+        return this.x + 260;
+    }
+
+    getTorreRelentizadoraY(){
+
+        return this.y+5
+    }
+
     mostrar(context) {
 
 
         context.drawImage(this.container, this.x, this.y, 400, 150);
         context.drawImage(this.torre_rapida, this.torre_rapida_x,this.torre_rapida_y);
-        context.drawImage(this.torre_lenta, this.x + 130,this.y+5);
-        context.drawImage(this.torre_relentizadora, this.x + 260,this.y+5);
+        context.drawImage(this.torre_lenta, this.torre_lenta_x,this.torre_lenta_y);
+        context.drawImage(this.torre_relentizadora, this.torre_relentizadora_x,this.torre_relentizadora_y);
+
+
+       
     }
 
 

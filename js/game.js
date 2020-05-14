@@ -27,7 +27,13 @@ canvas.onmouseup = unDraggear;
 
 function unDraggear() {
 
+    
+
+
+
     player1_interfaz.setEstado("torre_rapida", "unselected");
+    player1_interfaz.setEstado("torre_lenta", "unselected");
+    player1_interfaz.setEstado("torre_relentizadora", "unselected");
     player1_interfaz.serMostrarConstruccionesPosibles(false);
 }
 
@@ -43,6 +49,18 @@ function moverTorre(evt) {
         player1_interfaz.setPosicionTorre("torre_rapida", mousePos.x - 55, mousePos.y - 62);
 
     }
+
+    if (player1_interfaz.getEstado("torre_lenta") == "selected") {
+
+        player1_interfaz.setPosicionTorre("torre_lenta", mousePos.x - 55, mousePos.y - 62);
+
+    }
+
+    if (player1_interfaz.getEstado("torre_relentizadora") == "selected") {
+
+        player1_interfaz.setPosicionTorre("torre_relentizadora", mousePos.x - 55, mousePos.y - 62);
+
+    }
 }
 
 
@@ -53,15 +71,30 @@ function checkearTorre(evt) {
 
     var mousePos = getMousePos(canvas, evt);
 
-    if (mousePos.x >= player1_interfaz.getTorreRapidaX() && mousePos.x <= player1_interfaz.getTorreRapidaX() + 126 ) {
+    if (mousePos.x >= player1_interfaz.getTorreRapidaX() && mousePos.x <= player1_interfaz.getTorreRapidaX() + 126 &&
+        mousePos.y >= player1_interfaz.getTorreRapidaY() && mousePos.y <= player1_interfaz.getTorreRapidaY() + 100) {
        
         player1_interfaz.setEstado("torre_rapida", "selected");
 
-
         player1_interfaz.marcarPosiblesConstrucciones("torre_rapida");
 
-        // console.log("mousedown");
-        
+    }
+
+    if (mousePos.x >= player1_interfaz.getTorreLentaX() && mousePos.x <= player1_interfaz.getTorreLentaX() + 126 &&
+    mousePos.y >= player1_interfaz.getTorreLentaY() && mousePos.y <= player1_interfaz.getTorreLentaY() + 100) {
+   
+    player1_interfaz.setEstado("torre_lenta", "selected");
+
+    player1_interfaz.marcarPosiblesConstrucciones("torre_lenta");
+
+    }
+
+    if (mousePos.x >= player1_interfaz.getTorreRelentizadoraX() && mousePos.x <= player1_interfaz.getTorreRelentizadoraX() + 126 &&
+    mousePos.y >= player1_interfaz.getTorreRelentizadoraY() && mousePos.y <= player1_interfaz.getTorreRelentizadoraY() + 100) {
+   
+    player1_interfaz.setEstado("torre_relentizadora", "selected");
+
+    player1_interfaz.marcarPosiblesConstrucciones("torre_relentizadora");
 
     }
     
