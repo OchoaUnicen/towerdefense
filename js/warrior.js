@@ -1,6 +1,5 @@
 class Warrior {
 
-
     constructor() {
 
 
@@ -10,6 +9,8 @@ class Warrior {
         this.y = 87;
         this.direccion = "derecha";
         this.estado = "quieto";
+        this.cd_animacion_caminar = 600;
+        this.estado_animacion = "decreciente";
         
     }
 
@@ -24,15 +25,103 @@ class Warrior {
 
 
     dibujar(context) {
-
-
         context.drawImage(this.imagen, this.x, this.y, this.imagen.naturalWidth/3, this.imagen.naturalHeight/3);
+    }
+
+
+    animar() {
+
+        const velocidadAnimacion = 15;
+        if(this.estado_animacion == "decreciente"){
+            this.cd_animacion_caminar -= velocidadAnimacion;
+        } else if (this.estado_animacion == "creciente") {
+            this.cd_animacion_caminar += velocidadAnimacion;
+
+        }
+
+        
+
+        if (this.direccion == "izquierda") {
+
+            if (this.cd_animacion_caminar <= 600 && this.cd_animacion_caminar > 500) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_izquierda_1.png";
+            }
+            if (this.cd_animacion_caminar < 500  && this.cd_animacion_caminar < 400) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_izquierda_2.png";
+            }
+            if (this.cd_animacion_caminar < 400 && this.cd_animacion_caminar < 300) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_izquierda_3.png";
+            }
+            if (this.cd_animacion_caminar < 300 && this.cd_animacion_caminar < 200) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_izquierda_4.png";
+            }
+            if (this.cd_animacion_caminar < 200 && this.cd_animacion_caminar < 100) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_izquierda_5.png";
+            }
+            if (this.cd_animacion_caminar < 100 && this.cd_animacion_caminar < 0) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_izquierda_6.png";
+            }
+
+
+
+            
+
+        }
+
+        else if (this.direccion == "derecha") {
+
+            
+
+            if (this.cd_animacion_caminar < 600 && this.cd_animacion_caminar > 500) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_derecha_1.png";
+            }
+            if (this.cd_animacion_caminar < 500  && this.cd_animacion_caminar < 400) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_derecha_2.png";
+            }
+            if (this.cd_animacion_caminar < 400 && this.cd_animacion_caminar < 300) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_derecha_3.png";
+            }
+            if (this.cd_animacion_caminar < 300 && this.cd_animacion_caminar < 200) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_derecha_4.png";
+            }
+            if (this.cd_animacion_caminar < 200 && this.cd_animacion_caminar < 100) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_derecha_5.png";
+            }
+            if (this.cd_animacion_caminar < 100 && this.cd_animacion_caminar < 0) {
+
+                this.imagen.src = "./img/mobs/warrior/anim_caminar_derecha_6.png";
+            }
+        }
+    
+        
+
+        if(this.cd_animacion_caminar <= 25 ) {
+
+            this.estado_animacion = "creciente";
+
+        }
+
+        if (this.cd_animacion_caminar >= 525) {
+
+            this.estado_animacion = "decreciente";
+        }
 
 
     }
 
-
     avanzar() {
+        
         //  const moveSpeed = 0.189;
          const moveSpeed = 0.75;
         //const moveSpeed = 2;
@@ -96,15 +185,9 @@ class Warrior {
         //console.log("x: "+this.x +" y: "+ this.y, this.direccion);
         
         
-        //Modificar X
-        //x ++
-        //hasta xFinal
-        //Modifica  Y
-        //y ++
-        //hasta yFinal
+        
 
-
-        // animar();
+        this.animar();
         
 
 
