@@ -39,48 +39,31 @@ class Warrior {
 
                 if (this.x < 196) {
                     this.x +=moveSpeed;
-                    
                 }
-
                 if (this.x >= 196 && this.x < 209 && this.y < 270)  {
-
                     this.y += moveSpeed;
-
                 }
-                
-
+            
                 if (this.y >= 270 && this.x < 360) {
                     this.x +=moveSpeed;
-
                 }
-
                 if (this.y <= 271 && this.x >= 360 && this.x < 454) {
                     this.x +=moveSpeed/2;
                     this.y -=moveSpeed/2;
-
                 }
-
-
                 if (this.x >= 454 && this.y >= 175 && this.x <=554) {
-
                     this.x +=moveSpeed;
                 }
-
                 if (this.x >= 554 && this.x < 638 && this.y >= 175 && this.y <= 259 && this.direccion == "derecha") {
-
                     this.x += moveSpeed/2;
                     this.y += moveSpeed/2;
-
                 }
-
                  if(this.x >= 637  && this.y >=258 && this.y < 269 ) {
                     // && this.x >=600
                     if (this.direccion == "derecha") {
                         this.direccion = "izquierda";
                     }
-
                 }
-
                 if (this.x >= 618 && this.y >= 258 && this.direccion == "izquierda") {
 
                     this.x -=moveSpeed/12;
@@ -109,11 +92,10 @@ class Warrior {
                     this.y = 87;
 
                 }
-
-
-
-                
-        console.log("x: "+this.x +" y: "+ this.y, this.direccion);
+  
+        //console.log("x: "+this.x +" y: "+ this.y, this.direccion);
+        
+        
         //Modificar X
         //x ++
         //hasta xFinal
